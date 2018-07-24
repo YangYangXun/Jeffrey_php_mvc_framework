@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+  Options -Multiviews
+  RewriteEngine On
+  RewriteBase /Jeffrey/public
+   # ¦pªG?¨Dªº¬O¯u‰b¦s¦bªº¤å¥ó©Î¥Ø?¡Aª½±µ??
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # ¦pªG??ªº¤å¥ó©Î¥Ø?¤£¬O¯u¨Æ¦s¦b¡A¤À‰Y?¨D¦Ü index.php
+  # ¥H _GET[''] Àò¨ú°Ñ¼Æ¤£¦A»Ý­n ?url=$1 ªº®æ¦¡, ¥H /$1 §Y¥i¹ê²{
+  RewriteRule  ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
